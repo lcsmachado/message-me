@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MessageMe</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +12,13 @@
   </head>
 
   <body>
+    <%= render 'layouts/navigation' %>
     <%= yield %>
+    <script>
+      $('.ui.sidebar').sidebar({
+          context: $('.ui.pushable.segment'),
+          transition: 'overlay'
+      }).sidebar('attach events', '#mobile_item');
+    </script>
   </body>
 </html>
